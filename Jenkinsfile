@@ -43,12 +43,7 @@ pipeline {
     }
     stages {
         
-        stage("Checkout Code") {
-            steps {
-                git branch: 'master',
-                url: "git@github.com:fghelem/booking.git"
-            }
-        }
+        
         stage("Building Application") {
             steps {
                sh  "mvn build"
