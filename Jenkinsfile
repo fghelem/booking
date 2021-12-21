@@ -50,6 +50,12 @@ pipeline {
                bat  "mvn test-compile"
             }
         }
+
+         stage("Building Application") {
+            steps {
+               bat  "mvn package"
+            }
+        }
         
         }
  }
