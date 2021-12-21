@@ -38,16 +38,11 @@
 pipeline {
     agent any
     tools {
-        maven 'MAVEN_HOME'
-        jdk 'JAVA_HOME'
+        maven 'maven'
+       
     }
     stages {
-        stage("Tools initialization") {
-            steps {
-                 "mvn --version"
-                "java -version"
-            }
-        }
+        
         stage("Checkout Code") {
             steps {
                 git branch: 'master',
@@ -56,7 +51,7 @@ pipeline {
         }
         stage("Building Application") {
             steps {
-                "mvn clean package"
+               sh  "mvn build"
             }
         }
         
