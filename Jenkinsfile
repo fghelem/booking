@@ -46,7 +46,7 @@ pipeline {
         
         stage("Building Application") {
             steps {
-               bat  "mvn build"
+               bat  "mvn test-compile"
             }
         }
         
