@@ -38,8 +38,8 @@
 pipeline {
     agent any
     tools {
-        maven 'MAVEN_PATH'
-        jdk 'jdk8'
+        maven 'MAVEN_HOME'
+        jdk 'JAVA_HOME'
     }
     stages {
         stage("Tools initialization") {
