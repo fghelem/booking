@@ -51,7 +51,7 @@ pipeline {
         stage("Checkout Code") {
             steps {
                 git branch: 'master',
-                url: "https://github.com/iamvickyav/spring-boot-data-H2-embedded.git"
+                url: "git@github.com:fghelem/booking.git"
             }
         }
         stage("Building Application") {
@@ -59,17 +59,6 @@ pipeline {
                sh "mvn clean package"
             }
         }
-        stage("Code coverage") {
-           steps {
-               jacoco(
-                    execPattern: '**/target/**.exec',
-                    classPattern: '**/target/classes',
-                    sourcePattern: '**/src',
-                    inclusionPattern: 'com/iamvickyav/**',
-                    changeBuildStatus: true,
-                    minimumInstructionCoverage: '30',
-                    maximumInstructionCoverage: '80')
-               }
-           }
+        
         }
  }
