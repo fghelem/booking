@@ -46,7 +46,7 @@ pipeline {
         
         stage("Building Application") {
             steps {
-               sh  "mvn build"
+               bat  "mvn build"
             }
         }
         
